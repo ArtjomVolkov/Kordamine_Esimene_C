@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,186 +6,98 @@ using System.Threading.Tasks;
 
 namespace Kordamine_Esimene_C
 {
-    class Program
+    class Kordused_Massivid
     {
-        
         static void Main(string[] args)
         {
-            Console.WriteLine("Kas sa tahad midagi osta? (1/2)");
-            int ans = int.Parse(Console.ReadLine());
-            if (ans==1)
+            /*//Console.OutputEncoding = Encoding.UTF8;VENE KEELE KASUTAMINE!!!!
+            int[] arvudd = new int[5];
+            int a=0;
+            int k=0;
+            do
             {
-                Console.WriteLine("Poodis on piim,sai ja leib");
-                Console.WriteLine("Kas sa soovib osta piima ? Hind:1.13 => ");
-                string piim = Console.ReadLine();
-                if (piim.ToUpper()=="JAH")
+                try
                 {
-                    Console.WriteLine("Added...");
-                    Console.WriteLine("Kas sa soovib osta saia ? Hind:0.99 => ");
-                    string sai = Console.ReadLine();
-                    if (sai.ToUpper()=="JAH")
-                    {
-                        Console.WriteLine("Added...");
-                        Console.WriteLine("Kas sa soovib osta leiba ? Hind:0.73 => ");
-                        string leib = Console.ReadLine();
-                        if (leib.ToUpper()=="JAH")
+                    Console.WriteLine("Sisesta arv => ");
+                    a = int.Parse(Console.ReadLine());
+                    arvudd[k] = a;
+                    k++;
+                }
+                catch (Exception exp)
+                {
+                    Console.WriteLine(exp);
+                }
+            } while (k<5);
+            int summa = 0;
+            int korr = 1;
+            float ariv = 0;
+            foreach (int arv in arvudd)
+            {
+                summa += arv;
+                korr *= arv;
+                ariv = arv / arvudd.Length,4;
+            }
+            Console.WriteLine($"Summa = {summa},Korr = {korr},Ariv = {ariv}");
+            Console.ReadLine();*/
+
+
+
+            /*Random rnd = new Random();
+            int N = rnd.Next(1, 100);
+            int M = rnd.Next(1, 100);
+            Console.WriteLine($"N={N}");
+            Console.WriteLine($"M={M}");
+            if (N>M)
+            {
+                int abi = N;
+                N = M;
+                M = abi;
+
+            }//N<M
+            int[] massiv = new int[M-N+1];
+            int j = 0;
+            for (int i = N; i < M+1; i++)//N...M,massiv[0]...massiv[M-M]
+            {
+                massiv[j]= i;
+                j++;
+
+            }
+            foreach (var n_m in massiv)
+            {
+                Console.Write($"{n_m*n_m,5}");
+            }
+            Console.ReadLine();*/
+
+            /*char[] Tahed = new char[7] { 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
+                        Console.WriteLine($"Esimene täht on {Tahed[0]}");
+                        foreach (char taht in Tahed)
                         {
-                            Console.WriteLine("Added...");
-                            float w = (float)(1.13 + 0.99 + 0.73);
-                            Console.WriteLine("Price {0} euro", w);
-                            Console.ReadKey();
+                            Console.Write($"{taht,3}");
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Remove...");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Remove...");
-                }
-
-
-            }
-            else
-            {
-                Console.WriteLine("Viga...");
-                return;
-            }
-            /*Console.WriteLine("Mis pikkus sa oled? => ");
-            float pikk = float.Parse(Console.ReadLine());
-            Console.WriteLine("Sa oled naine või mees? (mees=1)(naine=2)");
-            int pol = int.Parse(Console.ReadLine());
-            if (pikk<=160)
-            {
-                Console.WriteLine("Sa oled lühike.");
-            }
-            else if (pikk < 160 || pikk > 190 )
-            {
-                Console.WriteLine("Sa oled keskmine.");
-            }
-            else if (pikk>=190)
-            {
-                Console.WriteLine("Sa oled pikk.");
-            }
-            Console.ReadKey();
-            /*Console.WriteLine("a= ");
-            int a = int.Parse(Console.ReadLine());
-            Console.WriteLine("b= ");
-            int b = int.Parse(Console.ReadLine());
-            int S = a * b;
-            Console.WriteLine("Pindala = {0}",S);
-            Console.WriteLine("Kas soovite tegeda romondi ? => ");
-            string remont = Console.ReadLine();
-            if (remont.ToUpper() == "JAH" || remont.ToUpper() == "YES")
-            {
-                Console.WriteLine("Kui palju maksab üks ruutmeeter ? =>");
-                int c = int.Parse(Console.ReadLine());
-                int Ruut = S * c;
-                Console.WriteLine("Põranda vahetamise hind => {0}", Ruut);
-                float skid = (float)(Ruut * 0.3);
-                int skid1 = (int)(Ruut - skid);
-                Console.WriteLine("30% hinnasoodustusega => {0}\nHind koos hinnasoodustusega => {1}", skid,skid1);
-                    Console.WriteLine("Kas temperatuur kodus on üle kaheksateistkümne kraadi (18) => (jah/ei)");
-                    string temp = Console.ReadLine();
-                    if (temp.ToUpper()=="JAH")
-                    {
-                        Console.WriteLine("Hästi,see on soovitav toasoojus talvel temperatuur.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Again...");
-                        return;
-                    }
-                    Console.ReadLine();
-            }
-            else
-            {
-                Console.WriteLine("Viga");
-                return;
-            }
-            Console.ReadLine();
-
-
-            /*Console.WriteLine("Tere nimeta nime pinginaabri => ");
-            string name1 = Console.ReadLine();
-            Console.WriteLine("Nimeta nime pinginaabri => ");
-            string name2 = Console.ReadLine();
-            if ((name1=="Artjom" && name2=="Timofei") || (name1=="Artjom" && name2=="Denis") || (name1=="German" && name2=="Kevin") || (name1 == "Timofei" && name2 == "Artjom") || (name1 == "Denis" && name2 == "Artjom") || (name1 == "Kevin" && name2 == "German"))
-            {
-                Console.WriteLine("Nad on pinginaabrid!");
-            }
-            else
-            {
-                Console.WriteLine("Nad ei ole pinginaabrid!");
-            }
-            Console.ReadKey();*/
-            /*double hind = 10;
-            string pilet= "täispilet";
-            Console.WriteLine("Mis on sinu nimi?");
-            string eesnimi = Console.ReadLine();
-            Console.Write("Tere tulemast! {0}", eesnimi);
-            if (eesnimi.ToLower()=="juku")
-            {
-                Console.WriteLine(",tule külla! Kas lähme kinno?");
-                string vastus = Console.ReadLine();
-                if (vastus.ToUpper()=="JAH" || vastus.ToUpper()=="YES" || vastus.ToUpper()=="ДА")
-                {
-                    Console.WriteLine("Kui vana sa oled?");
-                    int vanus = int.Parse(Console.ReadLine());
-                    if (vanus < 0 || vanus > 108)
-                    {
-                        Console.WriteLine("Viga!");
-                        pilet = "viga";
-                    }
-                    else if (vanus<6 || vanus>=65)
-                    {
-                        hind -= hind * 1;
-                        pilet = "tasuta";
-                    }
-                    else if (vanus>=6 && vanus<12)
-                    {
-                        hind -= hind * 0.3;
-                        pilet = "lastepilet";
-                    }
-                    else if (vanus>=12 && vanus<18)
-                    {
-                        hind -= hind * 0.1;
-                        pilet = "koolipilet";
-                    }
-                    else if (vanus >19 && vanus<64)
-                    {
-                        hind -= hind;
-                        pilet = "täispilet";
-                    }
-                    char[] tahed = eesnimi.ToCharArray();
-                    int i = 0;
-                    eesnimi = "";
-                    foreach (var t in tahed)
-                    {
-                        if (i==0)
+                        Console.WriteLine("");
+                        Random rnd = new Random();
+                        int[] arvud = new int[10];
+                        for (int i = 0; i < arvud.Length; i++)
                         {
-                            eesnimi += t.ToString().ToUpper();
+                            arvud[i] = rnd.Next(0, 1000);
                         }
-                        else
+
+                        foreach (int arv in arvud)
                         {
-                            eesnimi += t.ToString().ToLower();
+                            Console.Write($"{arv,20}");
                         }
-                        i += 1;
-                    }
-                    Console.WriteLine("{0}, sul on {1} pilet ja vaja maksta {2} euro", eesnimi, hind, pilet);
-                }
-                else
-                {
-                    Console.WriteLine("Mõtle välja ise....");
-                }
-            }
-            else
-            {
-                Console.WriteLine(",mind täna kodus pole! :(");
-            }
-            Console.ReadKey();*/
+                        Console.WriteLine();
+                        int[,] tabel = new int[5,10];
+                        for (int i = 1; i < 21; i++)
+                        {
+                            Console.Write($"rida {i}: ");
+                            for (int j = 1; j < 11; j++)
+                            {
+                                Console.Write($"koht{j} ");
+                            }
+                            Console.WriteLine();
+                        }
+                        Console.ReadLine();*/
         }
     }
 }
