@@ -10,6 +10,53 @@ namespace Kordamine_Esimene_C
     {
         static void Main(string[] args)
         {
+            for (int i = 1; i < 10; i++)
+            {
+                Console.Write(i + "   |  ");
+                for (int j = 1; j < 10; j++)
+                {
+                    Console.Write("\t" + i * j);
+                }
+                Console.WriteLine("");
+                Console.WriteLine("");
+            }
+            Console.ReadLine();
+            /*Console.WriteLine("Купи слона!");
+            string slon = Console.ReadLine();
+            if (slon != "слон")
+            {
+               Console.WriteLine("Все так говорят "+slon+ "а ты купи!");
+               Console.ReadLine();
+            }
+            Console.WriteLine("Слон теперь твой!");
+            Console.ReadLine();
+
+            Random rnd = new Random();
+            int i = rnd.Next(10);
+            int c = 1;
+            Console.WriteLine("Компьютер загадал число от 0 до 9. Попробуйте отгодать его за три попытки.");
+            Console.WriteLine("Введите первое число:");
+            int j = Convert.ToInt32(Console.ReadLine());
+            while (c <= 3)
+            {
+                if (i == j)
+                {
+                    Console.WriteLine("Да! Компьютер загадал число " + j + "!");
+                    break;
+                }
+                else
+                {
+                    c++;
+                    if (c == 4)
+                    {
+                        Console.WriteLine("Увы, вы не отгодали загаданное число. Это было число " + i + "!");
+                        break;
+                    }
+                    Console.WriteLine("Нет, это не число " + j + "! Попытка № " + c + ":");
+                    j = Convert.ToInt32(Console.ReadLine());*/
+        }
+    }
+			/*Console.ReadLine();*/
             /*//Console.OutputEncoding = Encoding.UTF8;VENE KEELE KASUTAMINE!!!!
             int[] arvudd = new int[5];
             int a=0;
