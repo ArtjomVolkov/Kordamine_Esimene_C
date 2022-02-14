@@ -10,17 +10,17 @@ namespace Kordamine_Esimene_C
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i < 10; i++)
+            /*for (int i = 1; i < 10; i++)
             {
                 Console.Write(i + "   |  ");
-                for (int j = 1; j < 10; j++)
+                for (int j = 1; j < 11; j++)
                 {
                     Console.Write("\t" + i * j);
                 }
                 Console.WriteLine("");
                 Console.WriteLine("");
             }
-            Console.ReadLine();
+            Console.ReadLine();*/
             /*Console.WriteLine("Купи слона!");
             string slon = Console.ReadLine();
             if (slon != "слон")
@@ -54,8 +54,7 @@ namespace Kordamine_Esimene_C
                     }
                     Console.WriteLine("Нет, это не число " + j + "! Попытка № " + c + ":");
                     j = Convert.ToInt32(Console.ReadLine());*/
-        }
-    }
+
 			/*Console.ReadLine();*/
             /*//Console.OutputEncoding = Encoding.UTF8;VENE KEELE KASUTAMINE!!!!
             int[] arvudd = new int[5];
