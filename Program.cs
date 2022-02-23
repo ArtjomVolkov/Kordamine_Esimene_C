@@ -148,8 +148,8 @@ namespace Kordamine_Esimene_C
             Random rnd = new Random();
             Dictionary<string, string> dict = new Dictionary<string, string>();
 
-            List<string> strana = new List<string> { "Estonia", "Russia", "England", "Germany", "Finland" };
-            List<string> kond = new List<string> { "Tallinn", "Moscow", "London", "Berlin", "Helsinki" };
+            List<string> strana = new List<string> { "Pärnumaa", "Harjumaa", "Tartumaa", "Valgamaa", "Viljandimaa" };
+            List<string> kond = new List<string> { "Pärnu", "Tallinn", "Tartu", "Valga", "Viljandi" };
             bool wantTo = true;
             int randInt = 0;
             double score = 0;
