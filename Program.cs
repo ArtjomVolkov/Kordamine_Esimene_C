@@ -144,44 +144,44 @@ namespace Kordamine_Esimene_C
                             Console.WriteLine();
                         }
                         Console.ReadLine();*/
-            Console.OutputEncoding = Encoding.UTF8;
+            //Console.OutputEncoding = Encoding.UTF8;
             Random rnd = new Random();
             Dictionary<string, string> dict = new Dictionary<string, string>();
 
-            List<string> strana = new List<string> { "Pärnumaa", "Harjumaa", "Tartumaa", "Valgamaa", "Viljandimaa" };
-            List<string> kond = new List<string> { "Pärnu", "Tallinn", "Tartu", "Valga", "Viljandi" };
+            List<string> kond1 = new List<string> { "Pärnumaa", "Harjumaa", "Tartumaa", "Valgamaa", "Viljandimaa" };
+            List<string> pealinn = new List<string> { "Pärnu", "Tallinn", "Tartu", "Valga", "Viljandi" };
             bool wantTo = true;
             int randInt = 0;
             double score = 0;
 
-            for (int i = 0; i < strana.Count; i++)
+            for (int i = 0; i < kond1.Count; i++)
             {
-                dict.Add(strana[i], kond[i]);
-                dict.Add(kond[i], strana[i]);
+                dict.Add(kond1[i], pealinn[i]);
+                dict.Add(pealinn[i], kond1[i]);
             }
             while (wantTo == true)
             {
 
-                Console.WriteLine("Что ты хочешь? Найти страну и столицу - 1, играть в игру - 2");
+                Console.WriteLine("Mida sa tahad? Leidke riik ja pealinn - 1, mängige mängu - 2");
                 int answer = int.Parse(Console.ReadLine());
                 if (answer == 1)
                 {
-                    Console.Write("Введи столицу и страну: ");
+                    Console.Write("Sisestage pealinn ja maakond:");
                     string input = Console.ReadLine();
                     if (dict.ContainsKey(input))
                     {
-                        Console.WriteLine("Пара " + input + " это " + dict[input]);
+                        Console.WriteLine("Paari " + input + " ja " + dict[input]);
                     }
                     else if (!dict.ContainsKey(input))
                     {
-                        Console.WriteLine("К сожалению, в этом словаре нет такого слова, вы хотите добавить новые слова? да - 1, нет - 2");
+                        Console.WriteLine("Kahjuks pole selles sõnastikus sellist sõna, kas soovite lisada uusi sõnu? jah - 1, ei - 2");
                         answer = int.Parse(Console.ReadLine());
                         if (answer == 1)
                         {
-                            Console.WriteLine("Введите новую страну, пожалуйста");
+                            Console.WriteLine("Palun sisestage uus maakond");
                             string new1 = Console.ReadLine();
 
-                            Console.WriteLine("Введите новую столицу, пожалуйста");
+                            Console.WriteLine("Palun sisestage uus pealinn");
                             string new2 = Console.ReadLine();
                             dict.Add(new1, new2);
                             dict.Add(new2, new1);
@@ -191,32 +191,32 @@ namespace Kordamine_Esimene_C
                 else if (answer == 2)
                 {
                     score = 0;
-                    for (int i = 0; i < strana.Count; i++)
+                    for (int i = 0; i < kond1.Count; i++)
                     {
                         randInt = rnd.Next(1, 3);
-                        int b = rnd.Next(1, strana.Count);
+                        int b = rnd.Next(1, kond1.Count);
                         if (randInt == 1)
                         {
-                            Console.WriteLine("Пара - " + strana[b]);
+                            Console.WriteLine("Paari - " + kond1[b]);
                             string userInput = Console.ReadLine();
-                            if (kond.IndexOf(userInput) == strana.IndexOf(strana[b]))
+                            if (pealinn.IndexOf(userInput) == kond1.IndexOf(kond1[b]))
                             {
-                                Console.WriteLine("Замечательно!");
+                                Console.WriteLine("Hämmastav!");
                                 score++;
                             }
                         }
                         else if (randInt == 2)
                         {
-                            Console.WriteLine("Пара - " + kond[b]);
+                            Console.WriteLine("Paari - " + pealinn[b]);
                             string userInput = Console.ReadLine();
-                            if (strana.IndexOf(userInput) == kond.IndexOf(kond[b]))
+                            if (kond1.IndexOf(userInput) == pealinn.IndexOf(pealinn[b]))
                             {
-                                Console.WriteLine("Замечательно!");
+                                Console.WriteLine("Hämmastav");
                                 score++;
                             }
                         }
                     }
-                    Console.WriteLine(score / strana.Count * 100 + "%");
+                    Console.WriteLine(score / kond1.Count * 100 + "%");
                 }
             }
             List<string> tooded = new List<string>();
